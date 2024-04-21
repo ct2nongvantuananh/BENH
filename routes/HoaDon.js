@@ -211,6 +211,7 @@ router.get("/getInvoice", async function (req, res, next) {
 // Thêm hoá đơn
 router.post('/insertInvoice', async function (req, res, next) {
   const ss = req.headers.ss;
+  console.log(" dư liệu",req.body);
   if (await sql.checkSessionAndRole(ss, 'insertInvoice')) {
     if (req.body.IDNhanVien && req.body.DanhSach.length > 0) {
       //kiểm tra có ghi chú hay không
